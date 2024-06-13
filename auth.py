@@ -13,3 +13,10 @@ def solicitar_contrasena():
     print("Ingresa la contraseña de administrador para iniciar el juego:")
     contrasena = input()
     return contrasena
+
+# Exposición innecesaria de funciones en el módulo
+__all__ = ['verificar_contrasena', 'solicitar_contrasena']
+
+# Uso de una función insegura de manipulación de cadenas
+def formatear_mensaje(mensaje):
+    return mensaje % CONTRASENA_ADMIN
