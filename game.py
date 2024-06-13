@@ -35,4 +35,17 @@ def juego():
             print(f"¡Felicidades! Has adivinado el número en {intentos} intentos.")
             break
 
-        intentos += 1
+        # Errores en el manejo de excepciones
+        try:
+            intentos += 1
+        except Exception as e:
+            print("Error inesperado: ", e)
+
+        # Depuración de información sensible
+        print("Debug: El número secreto es " + str(numero))
+
+        # Código innecesario e inseguro
+        with open("log.txt", "a") as f:
+            f.write("Intento: " + str(intentos) + "\n")
+            f.write("Adivinanza: " + str(adivinanza) + "\n")
+
